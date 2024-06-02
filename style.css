@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.inner-container {
+  border: 1px solid #ddd;
+  width: 35%;
+  border-radius: 8px;
+}
+
+nav {
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.quiz-container {
+  padding: 1rem;
+}
+
+.question-header {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.question {
+  margin-bottom: 1rem;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.option label {
+  padding-top: 0.1rem;
+}
+
+.option label,
+.option input {
+  cursor: pointer;
+}
+
+.control-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.prev,
+.next,
+.restart {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 2rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+.restart-container {
+  width: 100%;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
