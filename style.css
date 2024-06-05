@@ -80,7 +80,45 @@ nav {
 
 .restart-container {
   width: 100%;
-  /* display: flex; */
   justify-content: center;
   align-items: center;
 }
+
+/* Media Queries */
+
+@media (max-width: 480px) {
+  .inner-container {
+    width: 90%;
+  }
+  .control-btn {
+    flex-wrap: wrap;
+  }
+  .prev,
+  .next,
+  .restart {
+    width: 100%;
+  }
+
+  .prev {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 520px) {
+  .inner-container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 521px) and (max-width: 780px) {
+  .inner-container {
+    width: 60%;
+  }
+}
+
+@media (min-width: 781px) {
+  .inner-container {
+    width: 35%;
+  }
+}
+
