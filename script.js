@@ -164,8 +164,21 @@ const updateSelectedAnswer = () => {
   // console.log(selectedAnswers)
 }
 
+const checkQuestionNumber = () => {
+  if (questionNumber > 19) {
+    nextBtn.textContent = `Submit`;
+  }else if (questionNumber <= 19) {
+    nextBtn.textContent = `Next`;
+  }else {
+    nextBtn.textContent = `Next`;
+  }
+}
 
 const displayQuestion = () => {
+  if (questionIndex === 0) {
+    nextBtn.textContent = `Next`;
+  }
+
   question.innerHTML = `
     <h4 class="question-header">Question ${questionNumber}</h4>
     <p id="question" class="question">
@@ -194,7 +207,7 @@ const nextQuestion = () => {
     question.innerHTML= `<p>You got ${correctAnswerCount} questions correct!</p>`
   }
 
-  questionNumber > 19 && (nextBtn.textContent = `submit`)
+  checkQuestionNumber();
 }
 
 
@@ -207,7 +220,7 @@ const previousQuestion = () => {
     displayQuestion();
   }
 
-  questionNumber <= 19 && (nextBtn.textContent = `Next`)
+  checkQuestionNumber();
 }
 
 const submitQuiz = () => {
@@ -225,10 +238,13 @@ const submitQuiz = () => {
 const restartQuiz = () => {
   questionNumber = 1;
   questionIndex = 0;
-  displayQuestion()
+  correctAnswers = [];
+  selectedAnswers = [];
+  correctAnswerCount = 0;
   previousBtn.classList.remove("hidden");
   nextBtn.classList.remove("hidden");
-  restartBtn.classList.remove("show")
+  restartBtn.classList.remove("show");
+  displayQuestion();
 }
 
 displayQuestion();
